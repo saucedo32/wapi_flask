@@ -1,5 +1,7 @@
-print(22)
 
-pip install python-dotenv
+# Deben instalarse por terminal o Docker
+pip install requirements.txt
+
+
 
  
