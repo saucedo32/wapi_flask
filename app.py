@@ -1,51 +1,31 @@
+## FUENTES DE INFORMACION:
 
-# PRIMEROS PASOS:
-#pip install requirements.txt
+# Foro para app: https://koladev.xyz/posts/flask-whatsapp-cloud-api-1/
+# YT explicando paquete dotenv: 
 
-
-# IMPORTO LAS LIBRERIAS A USAR AQUI:
+# Importamos las librerias necesarias:
 import os
-from dotenv import load_dotenv
-import requests
-import json
+from flask import Flask, jsonify, request
+from app.whatsapp_client import WhatsAppWrapper  # Cliente definido que se encuentra en la carpeta app
+
+# El siguiente script es para crear la app web con flask:
+
+app = Flask(__name__)
+
+# Token de verificacion del hook fb:
+VERIFY_TOKEN = os.environ.get('WHATSAPP_HOOK_TOKEN')
 
 
-
-# Cargamos las variables de entorno:
-load_dotenv()
-
-
-TOKEN
+# Dentro del "home" nos debe saludar
+@app.route("/")
+def hello_world():
+    return "Hola, estoy en el home!"
 
 
-
-
-
-
-
-print()
-
-
-
-print(22)
-import pandas as pd
-
-
-w = [2,3,4]
-print(w)
-
-
-#from dotenv import load_dotenv
-#oad_dotenv()
-
-
-
-
-
-
-
-
-
+# Dentro de /send_template_message/ debe enviar el mensaje de prueba
+@app.route("/send_template_message/", methods=["POST"])
+def send_template_message():
+    pass
 
 
 
