@@ -22,10 +22,10 @@ def hello_world():
     return "Hola, estoy en el home!"
 
 
-# Dentro de /send_template_message/ debe enviar el mensaje de prueba
-@app.route("/send_template_message/", methods=["POST"])
-def send_template_message():
-    pass
+## Dentro de /send_template_message/ debe enviar el mensaje de prueba
+#@app.route("/send_template_message/", methods=["POST"])
+#def send_template_message():
+#    pass
 
 
 
