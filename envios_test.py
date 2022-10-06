@@ -34,8 +34,8 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  #'Authorization': 'Bearer EAAtOJ6bxteQBABRfsHcdRmzkTblk6sNrRs2Kir95ayv1P2DIVPoN6tSdsGsrzFj8G5R8FujD6ix0pvT7BHrDuZBXO5pLDPsVBqvFmHBmOZAK3ywpGX9KwDXl1n5J601wcbTFOjdZC9qnjdAaJMeNPAH1FTVrp2DHoEQn8M3KjpDZBEcreo2iuerQKz4CM5VsVIeDxZAP1nAZDZD'
-  'Authorization': "Bearer " + api_token
+  'Authorization': 'Bearer EAAtOJ6bxteQBABRfsHcdRmzkTblk6sNrRs2Kir95ayv1P2DIVPoN6tSdsGsrzFj8G5R8FujD6ix0pvT7BHrDuZBXO5pLDPsVBqvFmHBmOZAK3ywpGX9KwDXl1n5J601wcbTFOjdZC9qnjdAaJMeNPAH1FTVrp2DHoEQn8M3KjpDZBEcreo2iuerQKz4CM5VsVIeDxZAP1nAZDZD'
+  #'Authorization': "Bearer " + api_token
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
