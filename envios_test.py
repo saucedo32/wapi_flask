@@ -15,7 +15,6 @@ load_dotenv()
 
 #url = "https://graph.facebook.com/v14.0/100417452857527/messages"
 url = os.getenv("URL_WAPP")
-
 tel_destino = os.getenv("TEL_DESTINO")
 tel_bot = os.getenv("TEL_BOT")
 api_token = os.getenv("API_TOKEN")
