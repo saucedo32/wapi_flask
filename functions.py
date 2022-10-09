@@ -20,27 +20,60 @@ api_token = os.getenv("API_TOKEN")
 
 def envio_template(tel_destino, template_name, template_idiom):
 
-    #tel_destino = tel_destino
+  #tel_destino = tel_destino
 
-    payload = json.dumps({
-    "messaging_product": "whatsapp",
-    "to": tel_destino,
-    "type": "template",
-    "template": {
-        "name": template_name,
-        "language": {
-        "code": template_idiom
-        }
+  payload = json.dumps({
+  "messaging_product": "whatsapp",
+  "to": tel_destino,
+  "type": "template",
+  "template": {
+      "name": template_name,
+      "language": {
+      "code": template_idiom
+      }
+  }
+  })
+  headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer EAAtOJ6bxteQBAHDrRM58a4jH7zs7woX9RJZC5M996zdHzIsx0IElm8B0iZBQ5hZAgz2EH7xpZBOr0cLwrGaJKu7JKJZAsjuBLZAn3QyNfpFa6xYHnNNrEpr8FYcOOsczDbbp6UlM6gptAxBGAPWVfS6p68t7keCmKuTBkdAKB0fJI8yw4ZChIQtWIsv1Y8IHyZCgkASulwGxegZDZD'
+  #'Authorization': "Bearer " + api_token
+  }
+
+  response = requests.request("POST", url, headers=headers, data=payload)
+
+  print(response.text)
+
+
+
+def envio_mensaje(tel_destino, mensaje):
+  payload = json.dumps({
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": tel_destino,
+  "type": "text",
+  "text": {
+    "preview_url": False,
+    "body": mensaje
     }
-    })
-    headers = {
+  })
+  headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer EAAtOJ6bxteQBAHDrRM58a4jH7zs7woX9RJZC5M996zdHzIsx0IElm8B0iZBQ5hZAgz2EH7xpZBOr0cLwrGaJKu7JKJZAsjuBLZAn3QyNfpFa6xYHnNNrEpr8FYcOOsczDbbp6UlM6gptAxBGAPWVfS6p68t7keCmKuTBkdAKB0fJI8yw4ZChIQtWIsv1Y8IHyZCgkASulwGxegZDZD'
-    #'Authorization': "Bearer " + api_token
-    }
+  }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+  response = requests.request("POST", url, headers=headers, data=payload)
 
-    print(response.text)
+  print(response.text)
+
+
+
+
+
+
+
+
+
+
+
 
 
