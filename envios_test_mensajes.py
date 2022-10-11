@@ -3,6 +3,17 @@
 
 import requests
 import json
+import os
+
+
+from dotenv import load_dotenv
+# Cargamos las variables de entorno del proyecto
+load_dotenv()
+api_token = os.getenv("WHATSAPP_API_TOKEN")
+
+
+
+
 
 url = "https://graph.facebook.com/v14.0/100417452857527/messages"
 
@@ -18,7 +29,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer EAAtOJ6bxteQBAHDrRM58a4jH7zs7woX9RJZC5M996zdHzIsx0IElm8B0iZBQ5hZAgz2EH7xpZBOr0cLwrGaJKu7JKJZAsjuBLZAn3QyNfpFa6xYHnNNrEpr8FYcOOsczDbbp6UlM6gptAxBGAPWVfS6p68t7keCmKuTBkdAKB0fJI8yw4ZChIQtWIsv1Y8IHyZCgkASulwGxegZDZD'
+  'Authorization': api_token
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)

@@ -1,11 +1,12 @@
 import requests
 import json
 import os
+
 from dotenv import load_dotenv
-
-
 # Cargamos las variables de entorno del proyecto
 load_dotenv()
+
+
 
 
 # Recuperamos las var. de entorno:
@@ -17,7 +18,7 @@ load_dotenv()
 url = os.getenv("URL_WAPP")
 tel_destino = os.getenv("TEL_DESTINO")
 tel_bot = os.getenv("TEL_BOT")
-api_token = os.getenv("API_TOKEN")
+api_token = os.getenv("WHATSAPP_API_TOKEN")
 
 
 payload = json.dumps({
@@ -33,8 +34,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer EAAtOJ6bxteQBAHDrRM58a4jH7zs7woX9RJZC5M996zdHzIsx0IElm8B0iZBQ5hZAgz2EH7xpZBOr0cLwrGaJKu7JKJZAsjuBLZAn3QyNfpFa6xYHnNNrEpr8FYcOOsczDbbp6UlM6gptAxBGAPWVfS6p68t7keCmKuTBkdAKB0fJI8yw4ZChIQtWIsv1Y8IHyZCgkASulwGxegZDZD'
-  #'Authorization': "Bearer " + api_token
+  'Authorization': api_token
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
