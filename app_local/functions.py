@@ -14,8 +14,8 @@ url = os.getenv("URL_WAPP")
 #tel_destino = os.getenv("TEL_DESTINO")
 tel_bot = os.getenv("TEL_BOT")
 api_token = os.getenv("API_TOKEN")
-token = "Bearer " + str(api_token)
-token = "Bearer EAAtOJ6bxteQBAPC6rZBb4w3MSRKajDWKf6jrVk0zwZCVL3xzoZAbXab2kWHndiCF8EjQpa0nprK0CXmCNglUZCSN9qEa6jjCyEeEnFIyWS6EZAOSjmq1YYEoRsQkxlMvn2Uj94Fm4xBEFSaZBzZBB5DaA2TtxO2DscB0v0PfqKQNrZApcQmdD3mxyqamvZBcK9AtDMdZCfOZCqZC1wZDZD"
+token = os.getenv("WHATSAPP_API_TOKEN")
+
 
 # 1- Envio de templates:
 
@@ -37,7 +37,6 @@ def envio_template(tel_destino, template_name, template_idiom):
   headers = {
   'Content-Type': 'application/json',
   'Authorization': token
-  #'Authorization': "Bearer EAAtOJ6bxteQBAPC6rZBb4w3MSRKajDWKf6jrVk0zwZCVL3xzoZAbXab2kWHndiCF8EjQpa0nprK0CXmCNglUZCSN9qEa6jjCyEeEnFIyWS6EZAOSjmq1YYEoRsQkxlMvn2Uj94Fm4xBEFSaZBzZBB5DaA2TtxO2DscB0v0PfqKQNrZApcQmdD3mxyqamvZBcK9AtDMdZCfOZCqZC1wZDZD" + api_token
   }
 
   response = requests.request("POST", url, headers=headers, data=payload)
